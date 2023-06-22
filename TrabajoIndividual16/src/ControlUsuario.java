@@ -10,7 +10,7 @@ public class ControlUsuario {
         System.out.println("Ingrese su contraseña: ");
         contraseña = leer.nextLine();
         if (contraseña.equals("123")) {
-            System.out.println("Bienvenido");
+            System.out.println("La clave ingresada es correcta");
             contraseñaCorrecta = true;
         }else {
 
@@ -21,7 +21,7 @@ public class ControlUsuario {
                 System.out.println("Ingrese su contraseña: ");
                 contraseña = leer.nextLine();
                 if (contraseña.equals("123")) {
-                    System.out.println("Bienvenido");
+                    System.out.println("La clave ingresada es correcta");
                     contraseñaCorrecta = true;
                     break;
                 }
