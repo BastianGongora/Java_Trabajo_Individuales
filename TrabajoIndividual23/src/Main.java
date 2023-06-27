@@ -17,23 +17,23 @@ public class Main {
 
      while (continuar) {
      System.out.print("Ingrese una cadena de texto: ");
-     String texto = scanner.nextLine();
+     String tx = scanner.nextLine();
 
-     StringBuilder resultado = new StringBuilder();
+     StringBuilder rs = new StringBuilder();
 
-     for (int i = 0; i < texto.length(); i++) {
-         char c = texto.charAt(i);
+     for (int i = 0; i < tx.length(); i++) {
+         char c = tx.charAt(i);
 
          if (Character.isLowerCase(c)) {
-             resultado.append(Character.toUpperCase(c));
+             rs.append(Character.toUpperCase(c));
          } else if (Character.isUpperCase(c)) {
-             resultado.append(Character.toLowerCase(c));
+             rs.append(Character.toLowerCase(c));
          } else if (Character.isWhitespace(c) || Character.isDigit(c)) {
-             resultado.append(c);
+             rs.append(c);
          }
      }
 
-     System.out.println("El texcto Ingresado: " + texto +" / Resultado: "+ resultado.toString());
+     System.out.println("El texcto Ingresado: " + tx +" / Resultado: "+ rs.toString());
 
 
          System.out.print("¿Desea ingresar otro texto? (s/n): ");
