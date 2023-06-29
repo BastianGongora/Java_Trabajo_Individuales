@@ -1,16 +1,16 @@
-public class Cargafamiliar extends Trabajador {
-    private String rut;
-    private String nombres;
-    private String apellidos;
-    private String rutFamiliar;
-    private int parentesco;
-    private int edad;
+public class Cargafamiliar  {
+    private String rut,nombres,apellidos;
+    private Trabajador trabajador;
+    private int parentesco,edad;
 
-    public Cargafamiliar(String rut, String nombres, String apellidos, String rutFamiliar, int parentesco, int edad) {
+    public Cargafamiliar() {
+    }
+
+    public Cargafamiliar(String rut, String nombres, String apellidos, Trabajador trabajador, int parentesco, int edad) {
         this.rut = rut;
         this.nombres = nombres;
         this.apellidos = apellidos;
-        this.rutFamiliar = rutFamiliar;
+        this.trabajador = trabajador;
         this.parentesco = parentesco;
         this.edad = edad;
     }
@@ -19,41 +19,59 @@ public class Cargafamiliar extends Trabajador {
         return rut;
     }
 
+    public void setRut(String rut) {
+        this.rut = rut;
+    }
+
     public String getNombres() {
         return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public String getApellidos() {
         return apellidos;
     }
 
-    public String getRutFamiliar() {
-        return rutFamiliar;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public Trabajador getTrabajador() {
+        return trabajador;
+    }
+
+    public void setTrabajador(Trabajador trabajador) {
+        this.trabajador = trabajador;
     }
 
     public int getParentesco() {
         return parentesco;
     }
 
+    public void setParentesco(int parentesco) {
+        this.parentesco = parentesco;
+    }
+
     public int getEdad() {
         return edad;
     }
-    public String nombreCompleto() {
-        return nombres + " " + apellidos;
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
-    public int descomponerRut() {
-        String runSinGuion = rut.replaceAll("[^0-9]", "");
-        String runSinDV = runSinGuion.substring(0, runSinGuion.length() - 1);
-        return Integer.parseInt(runSinDV);
-    }
     @Override
     public String toString() {
-        return "RUT: " + rut +
-                "\nNombres: " + nombres +
-                "\nApellidos: " + apellidos +
-                "\nRUT Familiar: " + rutFamiliar +
-                "\nParentesco: " + parentesco +
-                "\nEdad: " + edad;
+        return "Carga{" +
+                "rut='" + rut + '\'' +
+                ", nombres='" + nombres + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", trabajador=" + trabajador +
+                ", parentesco=" + parentesco +
+                ", edad=" + edad +
+                '}';
     }
 }

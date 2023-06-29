@@ -1,18 +1,14 @@
 public class Trabajador {
-    private String nombres;
-    private String apellidos;
-    private String rut;
-    private String telefono;
-    private int edad;
-    private String rutFamiliar;
-    private String parentesco;
+    private String nombres, apellidos, run;
+    private int telefono, edad;
+
     public Trabajador() {
     }
 
-    public Trabajador(String nombres, String apellidos, String rut, String telefono, int edad) {
+    public Trabajador(String nombres, String apellidos, String run, int telefono, int edad) {
         this.nombres = nombres;
         this.apellidos = apellidos;
-        this.rut = rut;
+        this.run = run;
         this.telefono = telefono;
         this.edad = edad;
     }
@@ -33,19 +29,19 @@ public class Trabajador {
         this.apellidos = apellidos;
     }
 
-    public String getRut() {
-        return rut;
+    public String getRun() {
+        return run;
     }
 
-    public void setRut(String rut) {
-        this.rut = rut;
+    public void setRun(String run) {
+        this.run = run;
     }
 
-    public String getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
@@ -56,23 +52,34 @@ public class Trabajador {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    public String nombreCompleto() {
-        return nombres + " " + apellidos;
-    }
 
-    public int descomponerRut() {
-        String runSinGuion = rut.replaceAll("[^0-9]", "");
-        String runSinDV = runSinGuion.substring(0, runSinGuion.length() - 1);
-        return Integer.parseInt(runSinDV);
-    }
     @Override
     public String toString() {
         return "Trabajador{" +
                 "nombres='" + nombres + '\'' +
                 ", apellidos='" + apellidos + '\'' +
-                ", rut='" + rut + '\'' +
-                ", telefono='" + telefono + '\'' +
+                ", run='" + run + '\'' +
+                ", telefono=" + telefono +
                 ", edad=" + edad +
                 '}';
+    }
+
+    public String nombreCompleto() {
+        return this.nombres + " " + this.apellidos;
+    }
+
+    public int descomponerRun(String rut) {
+        int run;
+        String aux = "";
+        for (int i = 0; i < rut.length(); i++) {
+            if (rut.charAt(i) != '-') {
+                aux = aux + String.valueOf(rut.charAt(i));
+            } else {
+                break;
+            }
+        }
+
+        run = Integer.parseInt(aux);
+        return run;
     }
 }
